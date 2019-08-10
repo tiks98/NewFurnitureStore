@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -51,10 +52,17 @@ namespace NewFurnitureStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,WoodTypeId,Discription,Brand,Color,Price,ProductTypeId,StoreId,Stock,ImagePath")] Product product)
+        public ActionResult Create(Product product)
         {
             if (ModelState.IsValid)
             {
+                string fileName = Path.GetFileNameWithoutExtension(product.ImageFile.FileName);
+                string extension = Path.GetExtension(product.ImageFile.FileName);
+                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                product.ImagePath = "~/Content/images/products/" + fileName;
+                fileName = Path.Combine(Server.MapPath("~/Content/images/products/"), fileName);
+                product.ImageFile.SaveAs(fileName);
+
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
