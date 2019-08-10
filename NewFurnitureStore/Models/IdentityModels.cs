@@ -29,5 +29,13 @@ namespace NewFurnitureStore.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<FurnitureStore.Models.WoodType> WoodTypes { get; set; }
+
+        public System.Data.Entity.DbSet<FurnitureStore.Models.Store> Stores { get; set; }
+
+        public System.Data.Entity.DbSet<FurnitureStore.Models.ProductType> ProductTypes { get; set; }
+
+        public System.Data.Entity.DbSet<FurnitureStore.Models.Product> Products { get; set; }
     }
 }
