@@ -5,6 +5,11 @@ namespace NewFurnitureStore.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+        [Display(Name = "Name")]
+        public string CustomerName { get; set; }
+        [Display(Name = "Phone")]
+        public string CustomerPhone { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -64,6 +69,11 @@ namespace NewFurnitureStore.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Name")]
+        public string CustomerName { get; set; }
+        [Display(Name = "Phone")]
+        public string CustomerPhone { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

@@ -12,11 +12,13 @@ using NewFurnitureStore.Models;
 
 namespace NewFurnitureStore.Controllers
 {
+    [Authorize(Roles = RoleName.Admin)]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.ProductType).Include(p => p.Store).Include(p => p.WoodType);

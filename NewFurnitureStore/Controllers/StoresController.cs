@@ -11,6 +11,7 @@ using NewFurnitureStore.Models;
 
 namespace NewFurnitureStore.Controllers
 {
+    [Authorize(Roles = RoleName.Admin)]
     public class StoresController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

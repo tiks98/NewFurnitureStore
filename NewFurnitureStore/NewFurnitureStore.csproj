@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44369</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -199,12 +199,17 @@
     <Compile Include="Migrations\201908101950125_ProductModels.Designer.cs">
       <DependentUpon>201908101950125_ProductModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908110238519_AddPhoneToUsers.cs" />
+    <Compile Include="Migrations\201908110238519_AddPhoneToUsers.Designer.cs">
+      <DependentUpon>201908110238519_AddPhoneToUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductType.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\WoodType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -486,6 +491,9 @@
     <EmbeddedResource Include="Migrations\201908101950125_ProductModels.resx">
       <DependentUpon>201908101950125_ProductModels.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908110238519_AddPhoneToUsers.resx">
+      <DependentUpon>201908110238519_AddPhoneToUsers.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -505,7 +513,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55960</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55960/</IISUrl>
+          <IISUrl>https://localhost:44369/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

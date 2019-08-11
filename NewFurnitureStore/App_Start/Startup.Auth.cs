@@ -54,9 +54,9 @@ namespace NewFurnitureStore
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "344390749782264",
+               appSecret: "627a6c208437886bba27db960a2512fc");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
