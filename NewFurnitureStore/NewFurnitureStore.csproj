@@ -178,6 +178,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\ProductsController.cs" />
+    <Compile Include="Controllers\API\ProductTypesController.cs" />
     <Compile Include="Controllers\API\StoresController.cs" />
     <Compile Include="Controllers\API\WoodTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
