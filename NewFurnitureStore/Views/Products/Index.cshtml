@@ -4,78 +4,39 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="product-model">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="~/Home">Home</a></li>
+            <li class="active">Products</li>
+        </ol>
+        <h2>OUR PRODUCTS</h2>
+        <div class="col-md-12 product-model-sec">
+            @foreach (var item in Model)
+            {
+                <div class="product-grid love-grid">
+                    <div class="product-img thickbox">
+                        <img src="@Url.Content(item.ImagePath)" class="img-responsive" alt="" />
+                    </div>
+                    <div class="product-info simpleCart_shelfItem">
+                        <div class="product-info-cust prt_name">
+                            <h3>@item.Name</h3>
+                            <h4><strong>Category:</strong> @item.ProductType.Name</h4>
+                            <h4><strong>Brand:</strong> @item.Name</h4>
+                            <h4><strong>Color:</strong> @item.Color</h4>
+                            <h4><strong>Available Stock:</strong> @item.Stock</h4>
+                            <h4><strong>Wood Type:</strong> @item.WoodType.Name</h4>
+                            <h4><strong>Store:</strong> @item.Store.Name</h4>
+                            <span class="item_price">$@item.Price</span>
+                            <br />
+                            <input type="button" class="item_add items" value="ADD" style="margin-top: 20px;">
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+            }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductType.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Store.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WoodType.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Discription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Stock)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductType.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Store.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WoodType.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Discription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Stock)
-        </td>
-        <td>
-            <img src="@Url.Content(item.ImagePath)" alt="@item.Name" />
-        </td>
-    </tr>
-}
-
-</table>
+        </div>
+    </div>
+</div>

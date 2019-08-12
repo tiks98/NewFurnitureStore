@@ -20,8 +20,11 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.row{
-	margin:0;
+#logoutForm{
+    display:inline;
+}
+.row {
+    margin: 0;
 }
 .breadcrumb{
 	margin:2em 0;
