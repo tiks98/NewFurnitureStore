@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using NewFurnitureStore.Models;
+
+<div class="cart_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="~/Home">Home</a></li>
+            <li class="active">Cart</li>
+        </ol>
+        <div class="cart-items">
+            <h2>My Shopping Bag</h2>
+
+            @if (Session["cart"] != null)
+            {
+                foreach (CartItem item in (List<CartItem>)Session["cart"])
+                {
+            <div class="cart-header">
+                <a href="@Url.Action("Remove", "Cart", new { id = item.Product.Id })" class="close1"></a>
+                <div class="cart-sec">
+                    <div class="cart-item cyc">
+                        <img src="@Url.Content(item.Product.ImagePath)" />
+                    </div>
+                    <div class="cart-item-info">
+                        <h3>@item.Product.Name<span></span></h3>
+                        <h4><span> $ </span>@item.Product.Price</h4>
+                        <p class="qty">Quantity: <strong>@item.Quantity</strong> </p>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="delivery">
+                        <p style="display: inline;">Color: @item.Product.Color</p>
+                    </div>
+                </div>
+            </div>
+                }
+            }
+            else
+            {
+                <h1>Your Cart is Empty</h1>
+            }
+        </div>
+        @if (Session["cart"] != null)
+        {
+            List<CartItem> cart = (List<CartItem>)Session["cart"];
+            var total = cart.Sum(item => item.Product.Price * item.Quantity);
+            <div class="cart-total">
+                <div class="price-details">
+                    <h3>Price Details</h3>
+                    <span>Total</span>
+                    <span class="total">@total</span>
+                    <span>Discount</span>
+                    <span class="total">---</span>
+                    <div class="clearfix"></div>
+                </div>
+                <h4 class="last-price">TOTAL</h4>
+                <span class="total final">@total</span>
+                <div class="clearfix"></div>
+                <a class="order" href="@Url.Action("CreateOrder", "Cart")">Place Order</a>
+            </div>
+        }
+    </div>
+</div>

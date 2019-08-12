@@ -29,7 +29,7 @@
                             <h4><strong>Store:</strong> @item.Store.Name</h4>
                             <span class="item_price">$@item.Price</span>
                             <br />
-                            <input type="button" class="item_add items" value="ADD" style="margin-top: 20px;">
+                            <a href="@Url.Action("Buy", "Cart", new { id = item.Id })" style="margin-top: 20px;" class="item_add items">Add to Cart</a>
                         </div>
                         <div class="clearfix"> </div>
                     </div>

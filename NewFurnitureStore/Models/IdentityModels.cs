@@ -40,5 +40,8 @@ namespace NewFurnitureStore.Models
         public System.Data.Entity.DbSet<FurnitureStore.Models.ProductType> ProductTypes { get; set; }
 
         public System.Data.Entity.DbSet<FurnitureStore.Models.Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<NewFurnitureStore.Models.Order> Orders { get; set; }
+
     }
 }
