@@ -8,6 +8,7 @@ namespace NewFurnitureStore.Models
 {
     public class CartItem
     {
+        //product informations
         public Product Product
         {
             get;
