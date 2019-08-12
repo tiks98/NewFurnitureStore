@@ -22,7 +22,16 @@ namespace NewFurnitureStore.Controllers
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.ProductType).Include(p => p.Store).Include(p => p.WoodType);
-            return View(products.ToList());
+
+            if (User.IsInRole(RoleName.Admin))
+            {
+                return View("IndexAdmin",products.ToList());
+            }
+            else
+            {
+                return View(products.ToList());
+            }
+           
         }
 
         // GET: Products/Details/5
