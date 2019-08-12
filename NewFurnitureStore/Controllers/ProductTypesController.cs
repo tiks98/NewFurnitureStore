@@ -19,9 +19,12 @@ namespace NewFurnitureStore.Controllers
         // GET: ProductTypes
         public ActionResult Index()
         {
-            return View(db.ProductTypes.ToList());
+            
+               return View(db.ProductTypes.ToList());
+            
         }
 
+        
         // GET: ProductTypes/Details/5
         public ActionResult Details(int? id)
         {
